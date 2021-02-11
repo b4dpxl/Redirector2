@@ -141,10 +141,10 @@ class Printer:
             self.__default("[ ] {}".format(msg))
 
     def print_col(self, msg1, msg2, col):
-        print("{}{}{} {}".format(col, msg1, self.ENDC, msg2))
+        print("{}{}{} {}".format(col, msg1, self.ENDC, "\n    ".join(msg2.splitlines())))
 
     def __default(self, msg):
-        print(msg)
+        print("\n    ".join(line.splitlines()))
 
 
 def main():
