@@ -1,0 +1,11 @@
+.idea/
+*.old
+__pycache__/
+*.sqlite
+test/
+tests/
+custom_modules/modules/*
+resources/definitions.txt
+venv/
+.plan.md
+*.ini
