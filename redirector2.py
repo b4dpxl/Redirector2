@@ -22,10 +22,12 @@ class Redirect(BaseHTTPRequestHandler):
         if self.server.quiet:
             self.server.printer.ok(self.requestline)
         else:
+            self.server.printer.info("Connection from {}:{}".format(self.client_address[0],self.client_address[1]))
             self.server.printer.ok("{}\n{}\n".format(self.requestline, str(self.headers)))
 
     def _log_with_body(self):
         if not self.server.quiet:
+            self.server.printer.info("Connection from {}:{}".format(self.client_address[0],self.client_address[1]))
             try:
                 content_length = int(self.headers.get('Content-Length', 0)) # <--- Gets the size of data
             except:
